@@ -1,18 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userInput: "",
+  inputStr: [],
 };
 
 const stringSlice = createSlice({
-  name: "Stringput",
+  name: "stringput",
   initialState,
   reducers: {
-    setUserInput: (state, action) => {
-      state.userInput = action.payload;
+    addUserInput: (state, action) => {
+      state.inputStr.push(action.payload);
+    },
+    removeUserInput: (state, action) => {
+      state.inputStr = state.inputStr.filter((str) => str !== action.payload);
+    },
+    clearUserInput: (state) => {
+      state.inputStr = [];
+    },
+    editUserInput: (state, action) => {
+      const { oldNote, newNote } = action.payload;
+      const index = state.inputStr.indexOf(oldNote);
+      if (index !== -1) {
+        state.inputStr[index] = newNote;
+      }
     },
   },
 });
-export const { setUserInput } = stringSlice.actions;
+
+export const { addUserInput, removeUserInput, clearUserInput,editUserInput } =
+  stringSlice.actions;
 
 export default stringSlice.reducer;

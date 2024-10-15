@@ -19,7 +19,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   counter: counterReducer,
-  Stringput: stringReducer,
+  stringput: stringReducer,
   user: userReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
