@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Container and Title Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  min-height: 92vh;
+  padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-title {
+  font-size: 2.5rem;
+  background-color: pink;
+  border: 1px solid white transparent;
+  border-radius: 7px;
+  margin-bottom: 30px;
+  padding: 3px;
+  color: #333;
+}
+
+.counters-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Counter Card Styles */
+.counter-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.counter-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.counter-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.increment-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.increment-btn:hover {
+  background-color: #218838;
+}
+
+.decrement-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.decrement-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .counters-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-card {
+    margin-bottom: 20px;
+  }
+}
+
+.counter-card1 {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
 }
